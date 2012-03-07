@@ -43,4 +43,11 @@ ARGV.each do |word|
   end
 end
 
-hola prueba de diff
+ARGV.each do |word|
+  s = signature_of(word)
+  if signatures[s].length != 0
+    puts "Anagrams of '#{word}': #{signatures[s].join(', ')}"
+  else
+    puts "No anagrams of '#{word}' found in #{dictionary}"
+  end
+end
